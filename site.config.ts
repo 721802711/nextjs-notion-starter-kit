@@ -9,7 +9,7 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',                         // 网站名称
+  name: '个人网站',                         // 网站名称
   domain: 'nextjs-notion-starter-kit.transitivebullsh.it',    // 网站域名
   author: 'Travis Fischer',                                   // 作者名称
 
@@ -17,9 +17,9 @@ export default siteConfig({
   description: 'Example Next.js Notion Starter Kit Site',      // 网站描述
 
   // social usernames (optional)                       
-  twitter: 'transitive_bs',                            // Twitter用户名
-  github: 'transitive-bullshit',                       // GitHub用户名
-  linkedin: 'fisch2',                                   // LinkedIn用户名
+  twitter: '',                            // Twitter用户名
+  github: '',                       // GitHub用户名
+  linkedin: '',                                   // LinkedIn用户名
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
