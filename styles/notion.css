@@ -1,146 +1,166 @@
 /**
- * This file contains site-specifc style overrides for Notion elements from
- * react-notion-x.
+ * 这个文件包含针对 Notion 元素的站点特定样式覆盖，来自 react-notion-x。
  *
- * react-notion-x's goal is to match styling as close as possible to Notion,
- * whereas our goal with this site is to adjust Notion's styling in a few key
- * places to add some flare.
+ * react-notion-x 的目标是尽可能接近 Notion 的样式，
+ * 而我们这个站点的目标是在几个关键地方调整 Notion 的样式，增加一些特色。
  */
 
+/* 设置 Notion 的最大宽度和头部高度 */
 .notion {
-  --notion-max-width: 720px;
-  --notion-header-height: 54px;
+  --notion-max-width: 720px; /* Notion 内容的最大宽度 */
+  --notion-header-height: 54px; /* Notion 头部的高度 */
 }
 
+/* 移除 Notion 框架的内边距 */
 .notion-frame {
   padding: 0;
 }
 
+/* 设置页面底部的内边距，并调整行高 */
 .notion-page {
-  padding-bottom: calc(max(5vh, 32px)) !important;
-  line-height: 1.65;
+  padding-bottom: calc(max(5vh, 32px)) !important; /* 底部内边距，至少 32px 或 5% 视口高度 */
+  line-height: 1.65; /* 文本行高 */
 }
 
+/* 首页的特殊样式，调整最大宽度 */
 .index-page {
-  --notion-max-width: 900px;
+  --notion-max-width: 900px; /* 首页内容的最大宽度 */
 }
 
+/* 调整文本的内边距 */
 .notion-text {
   padding: 0.5em 2px;
 }
 
+/* 图片/视频的标题居中显示 */
 .notion-asset-caption {
   text-align: center;
 }
 
+/* 调整图片/视频的上下边距 */
 .notion-asset-wrapper {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
+/* 确保视频宽度为 100% */
 .notion-asset-wrapper-video > div,
 .notion-asset-wrapper-video video {
   width: 100% !important;
 }
 
+/* 调整头部样式，限制最大宽度 */
 .notion-header .notion-nav-header {
-  max-width: 1100px;
-  margin: 0 auto;
-  overflow-x: auto;
+  max-width: 1100px; /* 头部内容的最大宽度 */
+  margin: 0 auto; /* 水平居中 */
+  overflow-x: auto; /* 水平溢出时显示滚动条 */
 }
 
+/* 调整头部右侧元素的间距 */
 .notion-nav-header-rhs {
-  gap: 0.5rem;
+  gap: 0.5rem; /* 元素之间的间距 */
 }
 
+/* 设置图库网格的列数和间距 */
 .notion-gallery-grid {
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  grid-gap: 6vmin;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); /* 自适应列数，最小宽度 360px */
+  grid-gap: 6vmin; /* 网格间距 */
   gap: 6vmin;
 }
 
+/* 隐藏图库中的页面图标 */
 .notion-gallery-grid .notion-page-icon-inline {
   display: none;
 }
 
+/* 调整图库中页面标题的字体大小和换行方式 */
 .notion-gallery-grid .notion-page-title-text {
-  font-size: 2em;
-  white-space: unset;
+  font-size: 2em; /* 标题字体大小 */
+  white-space: unset; /* 允许正常换行 */
 }
 
+/* 调整图库中属性文本的换行和溢出处理 */
 .notion-gallery-grid .notion-collection-card-property {
-  white-space: unset;
-  text-overflow: unset;
+  white-space: unset; /* 允许正常换行 */
+  text-overflow: unset; /* 不截断溢出文本 */
 }
 
+/* 调整图库中属性文本的字体大小 */
 .notion-gallery-grid .notion-property-text {
   font-size: 14px;
 }
 
+/* 调整集合卡片的圆角和阴影 */
 .notion-collection-card {
-  border-radius: 16px;
-  box-shadow: none;
+  border-radius: 16px; /* 圆角大小 */
+  box-shadow: none; /* 移除阴影 */
 }
 
+/* 设置集合卡片封面图片的圆角 */
 .notion-collection-card-cover img {
   border-radius: 16px;
 }
 
+/* 确保集合卡片内容溢出时可见 */
 .notion-collection-card {
   overflow: visible;
 }
 
+/* 调整集合卡片封面的圆角和阴影 */
 .notion-collection-card-cover {
   border-radius: 16px;
-  box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
+  box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1); /* 阴影效果 */
 }
 
+/* 设置集合卡片封面的过渡效果和滤镜 */
 .notion-collection-card-cover {
   border-bottom: 0 none;
-  transition: filter 150ms linear;
-  filter: none;
+  transition: filter 150ms linear; /* 滤镜过渡效果 */
+  filter: none; /* 初始无滤镜 */
 }
 
+/* 鼠标悬停时增加亮度 */
 .notion-collection-card:hover .notion-collection-card-cover {
-  filter: brightness(120%);
+  filter: brightness(120%); /* 增加亮度 */
 }
 
-.notion-collection-card-body {
-  padding: 10px;
-}
-
-/* only target safari */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  _::-webkit-full-page-media,
-  _:future,
-  :root,
-  .notion-collection-card-cover {
-    transition: none 0ms linear;
-  }
-}
-
+/* 调整引用块的样式 */
 .notion-quote {
-  padding: 0.2em 0.75em;
-  line-height: 1.5;
-  font-style: italic;
-  font-size: 1.2em;
-  border-left: 4px solid #67bdfc;
+  padding: 0.2em 0.75em; /* 内边距 */
+  line-height: 1.5; /* 行高 */
+  font-style: italic; /* 斜体 */
+  font-size: 1.2em; /* 字体大小 */
+  border-left: 4px solid #67bdfc; /* 左边框颜色 */
 }
 
+/* 调整标题的底部边距 */
 .notion-h1,
 .notion-h2,
 .notion-h3 {
   margin-bottom: 0.25em;
 }
 
+/* 调整提示块的上下边距 */
 .notion-callout {
   margin: 0.75em 0;
 }
 
+/* 调整水平线的上下边距 */
 .notion-hr {
   margin: 2em 0;
 }
 
+/* 针对 Safari 浏览器的特殊过渡效果 */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  _::-webkit-full-page-media,
+  _:future,
+  :root,
+  .notion-collection-card-cover {
+    transition: none 0ms linear; /* 禁用过渡效果 */
+  }
+}
+
+/* 调整移动端页面的左右内边距 */
 @media only screen and (max-width: 920px) {
   .index-page.notion-page {
     padding-left: 2vw;
@@ -148,6 +168,7 @@
   }
 }
 
+/* 继续调整更小屏幕的左右内边距 */
 @media only screen and (max-width: 720px) {
   .notion-page {
     padding-left: 2vw;
@@ -155,35 +176,42 @@
   }
 }
 
+/* 在小屏幕上隐藏搜索按钮 */
 @media only screen and (max-width: 600px) {
   .notion-search-button {
     display: none !important;
   }
 }
 
+/* 调整页面图标封面的对齐方式 */
 .notion .notion-page-icon-cover {
   margin-left: auto;
   margin-right: auto;
 }
 
+/* 设置标题的显示方式和对齐方式 */
 .notion-title {
   display: block;
   text-align: center;
 }
 
+/* 调整集合行的底部内边距 */
 .notion-collection-row {
   padding-bottom: 1em;
 }
 
+/* 隐藏集合页面属性的列标题 */
 .notion-collection-page-properties .notion-collection-column-title {
   display: none;
 }
 
+/* 调整集合行属性的显示方式 */
 .notion-collection-row-property .notion-property {
   display: flex;
   justify-content: center;
 }
 
+/* 调整集合行值的显示方式和内边距 */
 .notion-collection-row-value {
   display: flex;
   align-items: center;
@@ -191,17 +219,20 @@
   min-height: 23px;
 }
 
+/* 设置页面封面的样式 */
 .notion-page-cover-wrapper,
 .notion-page-cover-wrapper span,
 .notion-page-cover-wrapper img {
-  max-width: 1200px !important;
-  border-radius: 24px;
+  max-width: 1200px !important; /* 最大宽度 */
+  border-radius: 24px; /* 圆角大小 */
 }
 
+/* 添加页面封面的阴影效果 */
 .notion-page-cover-wrapper {
   box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
 }
 
+/* 在小屏幕上调整页面封面的圆角 */
 @media only screen and (max-width: 1200px) {
   .notion-page-cover-wrapper,
   .notion-page-cover-wrapper span,
@@ -210,17 +241,20 @@
   }
 }
 
+/* 调整特定块的链接样式 */
 .notion-block-ab9a258d6cf444f3bb40dc2600feae91 .notion-page-link {
   justify-content: center;
   padding: 2em;
 }
 
+/* 设置代码块的背景和边框 */
 .notion-code {
   background: rgba(249, 250, 251, 1);
   border: 1px solid rgba(229, 231, 235, 1);
   border-radius: 0.375rem;
 }
 
+/* 调整链接的悬停效果 */
 .notion-link {
   position: relative;
   transition: unset;
@@ -236,16 +270,15 @@
 .notion-link:focus,
 .notion-link:hover {
   border-bottom-color: transparent;
-
-  background-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
+  background-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%); /* 渐变色 */
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100% 0.1rem;
-
   transition-property: background-position, background-size;
   transition-duration: 300ms;
 }
 
+/* 为不同背景色的块添加渐变效果 */
 .notion-red_background,
 .notion-pink_background,
 .notion-blue_background,
@@ -260,10 +293,9 @@
   border-radius: 0.5rem;
   border-bottom-left-radius: 0.125rem;
   box-decoration-break: clone;
-
   background-color: none;
 
-  /* light yellow */
+  /* 浅黄色渐变 */
   background-image: linear-gradient(
     119deg,
     var(--bg-color),
@@ -273,9 +305,9 @@
   );
 }
 
+/* 为紫色和粉色背景添加浅粉色渐变 */
 .notion-purple_background,
 .notion-pink_background {
-  /* light pink */
   background-image: linear-gradient(
     119deg,
     var(--bg-color),
@@ -285,9 +317,9 @@
   );
 }
 
+/* 为蓝色和灰色背景添加浅蓝色渐变 */
 .notion-blue_background,
 .notion-gray_background {
-  /* light blue */
   background-image: linear-gradient(
     119deg,
     var(--bg-color),
@@ -297,9 +329,9 @@
   );
 }
 
+/* 为红色和橙色背景添加浅红色渐变 */
 .notion-red_background,
 .notion-orange_background {
-  /* light red */
   background-image: linear-gradient(
     119deg,
     var(--bg-color),
@@ -309,8 +341,8 @@
   );
 }
 
+/* 为青绿色背景添加浅绿色渐变 */
 .notion-teal_background {
-  /* light green */
   background-image: linear-gradient(
     119deg,
     var(--bg-color),
@@ -320,8 +352,8 @@
   );
 }
 
+/* 为棕色背景添加深蓝色渐变 */
 .notion-brown_background {
-  /* dark blue */
   background-image: linear-gradient(
     119deg,
     var(--bg-color),
@@ -331,7 +363,7 @@
   );
 }
 
-/* disable highlighting in dark mode */
+/* 在暗黑模式下禁用高亮效果 */
 .dark-mode .notion-red_background,
 .dark-mode .notion-pink_background,
 .dark-mode .notion-blue_background,
@@ -347,7 +379,7 @@
   background: none !important;
 }
 
-/* if you don't want rounded page icon images, remove this */
+/* 为页面图标添加圆形效果和阴影 */
 .notion-page-icon-hero.notion-page-icon-image {
   border-radius: 50%;
   box-shadow: 0 8px 40px 0 rgb(0 0 0 / 21%);
@@ -357,49 +389,54 @@
   border-radius: 50%;
 }
 
+/* 设置头部的背景和模糊效果 */
 .notion-header {
   background: hsla(0, 0%, 100%, 0.8);
-  backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px); /* 模糊和饱和度效果 */
 }
 
+/* 暗黑模式下的头部样式 */
 .dark-mode .notion-header {
   background: transparent;
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: saturate(180%) blur(20px);
 }
 
-/* Workaround for Firefox not supporting backdrop-filter yet */
+/* 针对 Firefox 浏览器的兼容性调整 */
 @-moz-document url-prefix() {
   .dark-mode .notion-header {
     background: hsla(203, 8%, 20%, 0.8);
   }
 }
 
+/* 调整书签的悬停效果 */
 .notion-bookmark:hover {
   border-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
   border-image-slice: 1;
 }
 
+/* 隐藏特定块的列内边距 */
 .notion-block-ab9a258d6cf444f3bb40dc2600feae91 .notion-column {
   padding: 0;
 }
 
+/* 隐藏特定块 */
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
   display: none;
 }
 
+/* 调整搜索栏的阴影和无结果时的文本颜色 */
 .notion-search .searchBar {
   box-shadow: var(--fg-color-0) 0px 1px 0px;
 }
-
 .notion-search .noResults {
   color: var(--fg-color-3);
 }
-
 .notion-search .noResultsDetail {
   color: var(--fg-color-2);
 }
 
-.notion-equation.notion-equation-block{
+/* 调整公式块的垂直对齐方式 */
+.notion-equation.notion-equation-block {
   align-items: center;
 }
