@@ -7,8 +7,8 @@
 
 /* 设置 Notion 的最大宽度和头部高度 */
 .notion {
-  --notion-max-width: 720px; /* Notion 内容的最大宽度 */
-  --notion-header-height: 54px; /* Notion 头部的高度 */
+  --notion-max-width: 720px; /* 修改内容最大宽度 */
+  --notion-header-height: 54px; /* 修改头部高度 */
 }
 
 /* 移除 Notion 框架的内边距 */
